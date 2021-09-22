@@ -1,0 +1,47 @@
+<div id="componentID">
+    <h1>Ticket Invoice</h1><br><br>
+
+    <div class="c5">
+       
+        <label for="busname" >Bus Name -{{select.busname}}</label><br><br>
+        <label for="from_city">From City - {{select.from_city}}</label><br><label for="to_city"> To City
+            -{{select.to_city}}</label><br><br>
+        <label for="depature_time">Depature Time - {{select.depature_time}}</label><br><label for="arrival_time">
+            Arrival Time - {{select.arrival_time}}</label><br><br>
+        <label for="busfare">Bus Fare - {{select.busfare}}</label><br><br>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let busdetail"> {{busdetail.name}}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="mobileNumber">
+            <th mat-header-cell *matHeaderCellDef>Mobile Number </th>
+            <td mat-cell *matCellDef="let busdetail"> {{busdetail.mobileNumber}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="age">
+            <th mat-header-cell *matHeaderCellDef> Age</th>
+            <td mat-cell *matCellDef="let busdetail"> {{busdetail.age}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <br><br>
+
+    <div class="c6">
+
+        <label for="Total_seat">Total Number of seats - {{select.quantity}}</label><br><br>
+        <label for="price">Total Price -{{select.price}}</label>
+    </div><br><br>
+
+</div>
+
+<button mat-stroked-button (click)="ticketBooked()">CONFIRM </button>
+<button mat-stroked-button (click)="printTicket()">Print </button>

@@ -1,0 +1,33 @@
+.mat-card{
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+    max-height: 600px;
+}
+.header{
+    text-align: center;
+}
+.full-width{
+    width: 80%;
+}
+.forgot-password{
+    padding-left: 0px;
+}
+.email-input{
+    padding-top: 10px;
+}
+.pasword-input{
+    padding-top: 10px;
+}
+.aLink{
+    float:right;
+    padding-right: 60px;
+    text-decoration: none;
+}
+.image{
+    background-image: url('D:\BusTicketBooking\BusTicketBooking\src\assets\image1.png');
+   background-position: center;
+   background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+}

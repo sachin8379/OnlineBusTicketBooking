@@ -1,0 +1,18 @@
+.mat-card{
+    width: 30%;
+    height:49%;
+    margin: 1px 25px;
+  
+}
+.c1{
+    display: flex;
+}
+h1{
+    text-align: center;
+}
+button{
+    text-align: center;
+}
+input{
+    width: 10%;
+}

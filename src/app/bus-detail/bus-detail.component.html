@@ -1,0 +1,26 @@
+<form #userForm="ngForm"(ngSubmit)="onSubmit(userForm.value)">
+<div class="s1">
+    <h1>Bus Imformation</h1>
+    <mat-form-field class="example-form-field">
+        <mat-label>Bus Name</mat-label>
+        <input matInput type="text" [(ngModel)]="busDetails.busname" name="name" ngModel>
+    </mat-form-field><br>
+<mat-form-field class="example-form-field">
+    <mat-label>Bus Code</mat-label>
+    <input matInput type="text" [(ngModel)]="busDetails.buscode"  name="buscode" ngModel>
+</mat-form-field><br>
+<mat-form-field class="example-form-field">
+    <mat-label>Total Seat</mat-label>
+    <input matInput type="number" [(ngModel)]="busDetails.totalseat"  name="totalseat" ngModel>
+</mat-form-field><br>
+<mat-form-field appearance="fill">
+    <mat-label>Select BusClass</mat-label>
+    <mat-select [(ngModel)]="busDetails.busclass" name="busclass" ngModel>
+      <mat-option *ngFor="let abc of classes"  [value]="abc.id">{{abc.name}}</mat-option>
+    </mat-select>
+  </mat-form-field><br>
+    <button  mat-flat-button color="primary">Submit</button>
+</div>
+</form>
+<router-outlet></router-outlet>
+

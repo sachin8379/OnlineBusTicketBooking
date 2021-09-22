@@ -1,0 +1,65 @@
+<form  #updateForm="ngForm"(ngSubmit)="updateBusSchedule()">
+    <div class="s5">
+    <h1>Bus Schedule</h1>
+        <mat-form-field appearance="fill">
+        <mat-label>Bus Name</mat-label>
+        <mat-select [(ngModel)]="data.busname" name="busname" ngModel>
+          <mat-option *ngFor="let data of name" [value]="data.name" >{{data.name}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>From</mat-label>
+        <mat-select  [(ngModel)]="data.from_city" name="from_city" ngModel>
+          <mat-option  *ngFor="let data of class" [value]="data.name">{{data.name}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>To</mat-label>
+        <mat-select  [(ngModel)]="data.to_city" name="to_city" ngModel>
+          <mat-option  *ngFor="let data of class" [value]="data.name">{{data.name}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+    
+      <p>Duration : </p>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>From</mat-label>
+        <input matInput [matDatepicker]="picker"  [(ngModel)]="data.from_duration" name="from_duration" ngModel required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>To</mat-label>
+        <input matInput  [matDatepicker]="picker1"  [(ngModel)]="data.to_duration" name="to_duration" ngModel required>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field><br>
+    
+      <p>Depature Time: </p>
+     <input [ngxTimepicker]="picker3" placeholder="Clik here"  [(ngModel)]="data.depature_time"  name="depature_time" ngModel required>
+     <ngx-material-timepicker #picker3></ngx-material-timepicker>
+    
+     <p>Arrival Time: </p>
+     <input [ngxTimepicker]="picker2" placeholder="Clik here"  [(ngModel)]="data.arrival_time"   name="arrival_time" ngModel required>
+     <ngx-material-timepicker #picker2></ngx-material-timepicker><br><br>
+
+     <mat-form-field appearance="fill" floatLabel="always">
+      <mat-label>Available Seats</mat-label>
+      <input matInput type="number" class="example-right-align"  placeholder="0" [(ngModel)]="data.available_seats" name="available_seats" ngModel>
+  </mat-form-field><br>
+    
+     <p>Bus Fare: </p>
+     <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" class="example-right-align" placeholder="0"  [(ngModel)]="data.busfare"  name="busfare" ngModel required>
+         <span matSuffix>.00</span>
+      </mat-form-field><br>
+    
+      <button  mat-flat-button color="primary" style ="margin: 1px 40px;">Update</button>
+      <button  mat-flat-button color="warn" mat-dialog-close (click)="openSnackBar('Your data updated sucessifully!','Dismiss')">Close</button>
+  
+    </div>
+    </form>
+     

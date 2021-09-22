@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+}
+.c1{
+    display: flex;
+}
+label.boarding{
+    margin: 20px 20px;
+}
+label.arrival{
+    margin: 20px 20px;
+}
+.label.seats{
+    margin: 20px 20px;
+}
+.label.city{
+    background-color: rgb(201, 206, 209);
+}
+.mat-form-field{
+    background-color:white;
+    display: flex;
+    width: 30%;
+}
+.city2{
+  
+    width: 30%;
+  float: right;
+ 
+
+}
+.city1{
+   
+   
+   width: 30%;
+   float: left;
+  
+  
+}
+.city{
+    padding: 47px 75px;
+    margin: 0px 203px;
+    height: 50%;
+}
+.image{
+    background-image: url('D:\BusTicketBooking\BusTicketBooking\src\assets\image1.png');
+   background-position: center;
+   background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+}
+ .mat-flat-button {
+   
+       padding: 5px 34px;
+    /* margin: auto;
+    display: block; */
+     
+} 

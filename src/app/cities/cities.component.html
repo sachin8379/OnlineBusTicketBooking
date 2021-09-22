@@ -1,0 +1,11 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+    <div class='s4'>
+    <h1>Cities</h1>
+    <mat-form-field class="example-form-field">
+        <mat-label>City</mat-label>
+        <input matInput type="text" [(ngModel)]="value" name="name" ngModel>
+    </mat-form-field><br>
+    <button mat-button color ="primary">Submit</button>
+    </div>
+    </form>
+    

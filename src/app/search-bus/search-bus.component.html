@@ -1,0 +1,34 @@
+<form #userForm="ngForm" (ngSumbit)="onSubmit(userForm.value)" >
+ <div class="c1">
+ <mat-card *ngFor="let abc of select; let i = index">
+  
+    <label for="BusName" ><b>Bus Name -   &nbsp;&nbsp; {{abc.busname}}</b></label><br><br>
+    <mat-divider></mat-divider>
+    <label for="from_city">From-City -   &nbsp;&nbsp;{{abc.from_city}}</label><br><br>
+    <mat-divider></mat-divider>
+    <label for="to_city">To-City -   &nbsp;&nbsp; {{abc.to_city}}</label><br>  <br>
+    <mat-divider></mat-divider>
+    <label for="depature_time">Depature Time -  &nbsp;&nbsp; {{abc.depature_time}}</label><br><br>
+    <mat-divider></mat-divider>
+    <label for="arrival_time">Arrival Time -  &nbsp;&nbsp;{{abc.arrival_time}}</label><br><br>
+    <mat-divider></mat-divider>
+    <label for="busfare">Bus Fare - &nbsp;&nbsp; {{abc.busfare}}</label><br><br>
+    <mat-divider></mat-divider>
+    <label for="seats">Available Seats -  &nbsp;&nbsp;{{abc.available_seats}}</label><br><br>
+    <mat-divider></mat-divider>
+    <label for="book_seats">Number of seats - </label><br><br>
+    <button type="button" (click)="minus(i)"><i class="fa fa-minus" color="primary"></i></button>
+    {{abc.quantity}}
+   <button type="button" (click)="plus(i)"><i class="fa fa-plus"></i></button><br><br>
+   <mat-divider></mat-divider><br>
+   <label for="price"><b>Total Price - {{abc.price}}</b></label><br><br>
+    <button mat-flat-button color="primary"style ="margin: 1px 40px;" (click)="bookTicket(i)" (click)="gotoPage('passenger_detail')" >BOOK</button>
+
+</mat-card>
+</div>
+</form>
+
+
+
+
+

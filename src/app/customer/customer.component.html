@@ -1,0 +1,60 @@
+
+<div class="image">
+<div class="allbus">
+    <button mat-fab color="accent" routerLink="/add-customer">Add </button>
+    </div> 
+   
+        <div class="table1">
+            <form>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef  class="text-white bg-dark"> Customer Name </th>
+            <td mat-cell *matCellDef="let customer"> {{customer.name}}</td>
+            </ng-container>
+        
+          
+          <ng-container matColumnDef="mobNo">
+            <th mat-header-cell *matHeaderCellDef  class="text-white bg-dark">Mobile Nubmer </th>
+            <td mat-cell *matCellDef="let customer"> {{customer.mobNo}} </td>
+          </ng-container>
+        
+          
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef  class="text-white bg-dark"> Email</th>
+            <td mat-cell *matCellDef="let customer"> {{customer.email}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef  class="text-white bg-dark"> Gender</th>
+            <td mat-cell *matCellDef="let customer"> {{customer.gender}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef  class="text-white bg-dark"> Address </th>
+            <td mat-cell *matCellDef="let customer"> {{customer.address}} </td>
+          </ng-container>
+          
+           <ng-container matColumnDef="Edit">
+            <th mat-header-cell *matHeaderCellDef  class="text-white bg-dark"> Edit </th>
+            <td mat-cell *matCellDef="let customer"> <button  mat-button color="primary"(click)="openDialog(customer)">Edit</button>
+            </td>
+            
+        </ng-container> 
+            
+         <ng-container matColumnDef="Delete">
+              <th mat-header-cell *matHeaderCellDef  class="text-white bg-dark"> Delete </th>
+              <td mat-cell *matCellDef="let customer"> <button  mat-button color="warn" (click)="deleteCustomer(customer)">Delete</button>
+              </td>
+              
+          </ng-container> 
+          
+           
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+        
+            </form>
+        </div>
+      </div>
+        

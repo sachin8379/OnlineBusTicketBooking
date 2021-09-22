@@ -1,0 +1,35 @@
+<h1>Passenger Detail</h1>
+<mat-divider></mat-divider><br>
+
+<form [formGroup]="passengerForm" (ngSubmit)="onSubmit()"  class="c2"> 
+  <div class="c5">
+ 
+<div formArrayName="passengerArray" *ngFor="let item of userFormGroups.controls; let i = index;"> 
+
+  <mat-card [formGroupName]="i" class="c3" >
+ <mat-label> Seat Number  {{i+1}}</mat-label>
+ <br>
+    <mat-form-field appearance="fill">
+    <mat-label>Passanger Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field><br>
+    <mat-form-field  appearance="fill">
+      <mat-label>Mobile Number</mat-label>
+      <input matInput #input maxlength="10" formControlName="mobileNumber" placeholder="Enter your mobile Number"  required>
+      <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+    </mat-form-field><br>
+    <mat-form-field  appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput #postalCode maxlength="2" formControlName="age">
+      </mat-form-field><br>
+    
+    
+    </mat-card>
+   </div><br>
+
+  
+   <button mat-flat-button color="primary"style ="margin: 1px 100px;">BOOK</button>
+  </div>
+  </form> 
+
+  

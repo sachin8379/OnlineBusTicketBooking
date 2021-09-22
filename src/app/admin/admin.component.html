@@ -1,0 +1,30 @@
+ <form #userForm="ngForm"(ngSubmit)="onSubmit(userForm.value)"> 
+  <div class="c2">
+   <h1>User Profile</h1>
+    
+        <mat-form-field appearance="fill">
+        <mat-label>User Name</mat-label>
+        <input matInput  name="userName" ngModel>
+      </mat-form-field><br>
+
+      <mat-form-field  appearance="fill">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput #input maxlength="10" placeholder="Enter your mobile Number"  name="mob_no" ngModel  required>
+        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" name="email" ngModel required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill"> 
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" name="password" ngModel required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-hint *ngIf="!passwordInput.value">Enter  password</mat-hint>
+        </mat-form-field><br><br>
+        <button mat-flat-button color="primary"style ="margin: 1px 40px;" >Submit</button>
+
+    </div>
+    </form>

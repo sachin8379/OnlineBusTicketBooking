@@ -1,0 +1,73 @@
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="busname">
+      <th mat-header-cell *matHeaderCellDef >Bus Name</th>
+      <td mat-cell *matCellDef="let busdetail"> {{busdetail.busname}}</td>
+      </ng-container>
+  
+    
+    <ng-container matColumnDef="from_city">
+      <th mat-header-cell *matHeaderCellDef >From City </th>
+      <td mat-cell *matCellDef="let busdetail"> {{busdetail.from_city}} </td>
+    </ng-container>
+  
+    
+    <ng-container matColumnDef="to_city">
+      <th mat-header-cell *matHeaderCellDef >To City</th>
+      <td mat-cell *matCellDef="let busdetail"> {{busdetail.to_city}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="depature_time">
+        <th mat-header-cell *matHeaderCellDef >Depature Time</th>
+        <td mat-cell *matCellDef="let busdetail"> {{busdetail.depature_time}}</td>
+        </ng-container>
+    
+      
+      <ng-container matColumnDef="arrival_time">
+        <th mat-header-cell *matHeaderCellDef >Arrival Time</th>
+        <td mat-cell *matCellDef="let busdetail"> {{busdetail.arrival_time}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="busfare">
+        <th mat-header-cell *matHeaderCellDef >Bus Fare</th>
+        <td mat-cell *matCellDef="let busdetail"> {{busdetail.busfare}} </td>
+      </ng-container>
+    
+      
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef >Passenger Name</th>
+        <td mat-cell *matCellDef="let busdetail"> {{busdetail.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef >Age</th>
+        <td mat-cell *matCellDef="let busdetail"> {{busdetail.age}}</td>
+        </ng-container>
+    
+      
+      <ng-container matColumnDef="mobileNumber">
+        <th mat-header-cell *matHeaderCellDef >Mobile Number </th>
+        <td mat-cell *matCellDef="let busdetail"> {{busdetail.mobNo}} </td>
+      </ng-container>
+    
+      
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef > Total No of seats</th>
+        <td mat-cell *matCellDef="let busdetail"> {{busdetail.quantity}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef >Total Price</th>
+        <td mat-cell *matCellDef="let busdetail"> {{busdetail.price}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Delete">
+        <th mat-header-cell *matHeaderCellDef > Delete </th>
+        <td mat-cell *matCellDef="let busdetail"> <button  mat-button color="warn" (click)="deleteTicket(busdetail)">Delete</button>
+        </td>
+        
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
